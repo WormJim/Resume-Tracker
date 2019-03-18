@@ -10,7 +10,9 @@ Mongo((client) => {
   server.use(express.static(path.join(__dirname, '../public')));
 
   server.use('/api', (req, res) => {
-    const test = client.collection('test');
+    const { user } = req.query;
+
+    const test = client.collection(user);
 
     test.insertOne({ test: 'test' }, (e, r) => {});
 

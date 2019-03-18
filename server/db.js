@@ -1,9 +1,9 @@
 const config = require('./config');
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = `mongodb+srv://
-    ${config.user}:${config.pass}@${config.host}/${config.base}
-    ?retryWrites=true`;
+const uri = `mongodb+srv://${config.user}:${config.pass}@${config.host}/${
+  config.base
+}?retryWrites=true`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
