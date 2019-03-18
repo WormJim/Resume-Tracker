@@ -1,7 +1,8 @@
 const path = require('path');
-const express = require('express');
 const Mongo = require('./db');
+const express = require('express');
 const server = express();
+const router = require('./api');
 
 Mongo((client) => {
   server.use(express.json());
@@ -9,15 +10,7 @@ Mongo((client) => {
 
   server.use(express.static(path.join(__dirname, '../public')));
 
-  server.use('/api', (req, res) => {
-    const { user } = req.query;
-
-    const test = client.collection(user);
-
-    test.insertOne({ test: 'test' }, (e, r) => {});
-
-    res.send({ API: 'API' });
-  });
+  server.use('/api', router(client));
 
   server.listen(3000, () => {
     console.log('Listening On Port ', 3000);
