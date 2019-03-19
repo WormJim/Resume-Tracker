@@ -5,7 +5,6 @@ const { ObjectID } = require('mongodb');
 module.exports = (client) => {
   const router = express.Router();
 
-  // add job posting
   router.post('/posting/create', (req, res) => {
     const { user } = req.query;
 

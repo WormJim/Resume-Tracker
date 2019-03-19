@@ -12,6 +12,10 @@ Mongo((client) => {
 
   server.use('/api', router(client));
 
+  server.use('*', (req, res) => {
+    res.sendFile('../public');
+  });
+
   server.listen(3000, () => {
     console.log('Listening On Port ', 3000);
   });
