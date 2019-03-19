@@ -1,4 +1,5 @@
 let pipeline = [
+  { $match: {} },
   {
     $project: {
       name: '$name',
@@ -6,7 +7,9 @@ let pipeline = [
       source: '$source',
       sourceSite: '$sourceSite'
     }
-  }
+  },
+  { $group: {} },
+  { $sort: {} }
 ];
 
 module.exports = pipeline;
