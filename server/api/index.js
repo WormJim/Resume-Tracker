@@ -37,8 +37,7 @@ module.exports = (client) => {
   });
 
   router.get('/posting/company', (req, res) => {
-    const { user } = req.query;
-    const { _id } = req.body;
+    const { user, _id } = req.query;
 
     const collection = client.collection(user);
 
@@ -82,6 +81,21 @@ module.exports = (client) => {
       .catch((err) => {
         res.status(500).send(err);
       });
+  });
+
+  router.patch('/deleteME', (req, res) => {
+    // const { id } = req.params;
+    // const { id } = req.query;
+    const { id } = req.body;
+    console.log(id);
+  });
+
+  router.delete('/deleteME/:id', (req, res) => {
+    // const { id } = req.params;
+    // const { id } = req.query;
+    const { id } = req.body;
+
+    console.log(req);
   });
 
   return router;

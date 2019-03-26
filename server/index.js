@@ -1,10 +1,14 @@
 const path = require('path');
+const morgan = require('morgan');
 const Mongo = require('./db');
 const express = require('express');
 const server = express();
 const router = require('./api');
+const cors = require('cors');
 
 Mongo((client) => {
+  server.use(cors());
+  server.use(morgan('dev'));
   server.use(express.json());
   server.use(express.urlencoded({ extended: false }));
 

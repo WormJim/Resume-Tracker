@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 let axios = Axios.create({
-  baseURL: 'http://localhost/api/'
+  baseURL: 'http://localhost:3000/api/'
 });
 
 export function fetchFromDB(path, setState) {
@@ -10,5 +10,12 @@ export function fetchFromDB(path, setState) {
     .then(({ data }) => {
       setState(data);
     })
+    .catch((err) => {});
+}
+
+export function postToDB(path, data) {
+  axios
+    .post(`${path}`, data)
+    .then(({ data }) => {})
     .catch((err) => {});
 }

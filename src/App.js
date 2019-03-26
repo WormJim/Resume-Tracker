@@ -1,16 +1,31 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import './App.css';
-import Posting from './postings/Posting';
+import React, { useState, useEffect } from 'react';
+import Posting from './Containers/Posting/Posting';
+// import Filter from './Components/Filter/Filter';
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <Posting />
-      </>
-    );
-  }
-}
+// import './App.css';
 
-export default App;
+import { fetchFromDB } from './util/fetch';
+
+export default ({ user }) => {
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    fetchFromDB(`posting/companies?user=marc`, setInfo);
+  }, []);
+
+  useEffect(() => {
+    console.log('Info =>', info);
+  });
+
+  return (
+    <>
+      <Posting
+        user={'marc'}
+        id={'5c90654a6b802d292c9308ae'}
+        data={info}
+        filled={true}
+      />
+      {/* <Filter user={'marc'} /> */}
+    </>
+  );
+};
