@@ -15,6 +15,10 @@ const Posting = ({ user, id, filled }) => {
     if (filled) {
       fetchFromDB(`posting/company?user=${user}&_id=${id}`, setPost);
     }
+
+    return () => {
+      console.log('Clean Up');
+    };
   }, []);
 
   const handleInputChange = ({ target }) => {
