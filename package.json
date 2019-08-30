@@ -3,11 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --inspect ./server",
-    "react-start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "nodemon --inspect ./server"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,10 +19,9 @@
     "express": "^4.16.4",
     "mongodb": "^3.1.13",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react-dom": "^16.8.4"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.19.1"
   }
 }
