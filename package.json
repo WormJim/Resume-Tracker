@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --inspect ./server"
+    "start": "nodemon --inspect ./server",
+    "server-dev": "cross-env nodemon"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +32,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@types/express": "^4.17.1",
+    "@types/mongodb": "^3.3.1",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@typescript-eslint/eslint-plugin": "^1.12.0",
