@@ -20,6 +20,7 @@ module.exports = (api) => {
         {
           extensions: ['.ts', '.tsx'],
           root: ['./'],
+          alias: { config: './server/config' },
         },
       ],
     ],
