@@ -1,0 +1,12 @@
+{
+  "env": {
+    "NODE_ENV": "development",
+    "NODE_SERVER": "server",
+    "NODE_CONFIG_DIR": "server/config"
+  },
+  "exec": "babel-node --extensions \".ts\",\".tsx\" server/index.ts --inspect",
+  "ext": "ts,tsx",
+  "ignore": ["./__tests__/", "./src/"],
+  "restartable": "rs",
+  "verbose": false
+}

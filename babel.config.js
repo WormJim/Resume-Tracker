@@ -20,6 +20,7 @@ module.exports = (api) => {
         {
           extensions: ['.ts', '.tsx'],
           root: ['./'],
+          // alias: { config: './server/config' },
         },
       ],
     ],
@@ -50,6 +51,25 @@ module.exports = (api) => {
         },
       ],
     ],
+  };
+
+  const debug = {
+    presets: [
+      ...common.presets,
+      [
+        '@babel/env',
+        {
+          targets: { node: 'current' },
+          useBuiltIns: false,
+        },
+      ],
+    ],
+    env: {
+      debug: {
+        sourceMaps: 'inline',
+        retainLines: true,
+      },
+    },
   };
 
   return {
