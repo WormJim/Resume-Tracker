@@ -1,14 +1,15 @@
-import config from 'config';
+import dotenv from 'dotenv';
 import express from 'express';
-import initialize from 'server/database';
 import path from 'path';
+import initialize from 'server/database';
+
 const server = express();
+
+dotenv.config();
 
 // import apiRouter from 'server/routes/api';
 
 (async () => {
-  const PORT = config.get('PORT');
-
   const { db } = await initialize();
 
   server.use(express.static(path.join(__dirname, '../public')));
@@ -32,13 +33,7 @@ const server = express();
     res.sendFile('../public');
   });
 
-  server.listen(PORT, () => {
-    console.info(`Listening on Port ${PORT}`);
+  server.listen(process.env.PORT, () => {
+    console.info(`Listening on Port ${process.env.PORT}`);
   });
 })();
-
-// Mongo((client) => {
-
-//   server.use('/api', apiRouter(client));
-
-// });
