@@ -1,19 +1,17 @@
-const config = require('./config');
-const MongoClient = require('mongodb').MongoClient;
+import { user, pass, host, base } from './config';
+import { MongoClient } from 'mongodb';
 
-const uri = `mongodb+srv://${config.user}:${config.pass}@${config.host}/${
-  config.base
-}?retryWrites=true`;
+const uri = `mongodb+srv://${user}:${pass}@${host}/${base}?retryWrites=true`;
 
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
-module.exports = (cb) => {
+export default (cb) => {
   client.connect((err) => {
-    if (err)
+    if (err) {
       client.close().then(() => {
-        console.log('Error Connecting to DB', err);
+        console.info('Error Connecting to DB', err);
       });
-    else {
+    } else {
       cb(client.db('tracker'));
     }
   });
