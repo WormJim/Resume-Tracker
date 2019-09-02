@@ -1,9 +1,9 @@
-import config from 'config';
+import dotenv from 'dotenv';
 import { MongoClient } from 'mongodb';
 
-const dbConfig = config.get<{ USER: string; PASS: string; HOST: string; BASE: string }>('DATABASE');
+dotenv.config();
 
-const uri = `mongodb+srv://${dbConfig.USER}:${dbConfig.PASS}@${dbConfig.HOST}`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}`;
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -14,17 +14,18 @@ const initialize = async () => {
   try {
     const connection = await client.connect();
 
+    console.info('DB Started');
+
     return {
       connection,
       db: connection.db('tracker'),
     };
   } catch (error) {
+    console.error('DB Failed');
+    console.error(error);
+
     return error;
   }
-
-  // client.close().then(() => {
-  //   // console.log('Error Connecting to DB', err);
-  // });
 };
 
 export default initialize;
