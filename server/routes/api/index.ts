@@ -1,6 +1,6 @@
 import express from 'express';
-import postingRouter from 'server/routes/api/postings';
 import { Db } from 'mongodb';
+import postingRouter from 'server/routes/api/postings';
 
 export default async function apiRouter(db: Db) {
   const router = express.Router();
