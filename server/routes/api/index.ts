@@ -2,8 +2,6 @@ import express from 'express';
 import postingRouter from 'server/routes/api/postings';
 import { Db } from 'mongodb';
 
-// const pipline = require('./agg');
-
 export default async function apiRouter(db: Db) {
   const router = express.Router();
 
