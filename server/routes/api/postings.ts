@@ -42,7 +42,7 @@ const postingRouter = (db: Db) => {
     const collection = db.collection(user);
 
     collection
-      .findOne(ObjectID(_id))
+      .findOne(new ObjectID(_id))
       .then((data) => {
         res.send(data);
       })
@@ -58,7 +58,7 @@ const postingRouter = (db: Db) => {
     const collection = db.collection(user);
 
     collection
-      .findOneAndUpdate(ObjectID(_id), req.body)
+      .findOneAndUpdate(new ObjectID(_id), req.body)
       .then((data) => {
         res.send(data);
       })
@@ -74,7 +74,7 @@ const postingRouter = (db: Db) => {
     const collection = db.collection(user);
 
     collection
-      .updateOne(ObjectID(_id), { $push: {} })
+      .updateOne(new ObjectID(_id), { $push: {} })
       .then((data) => {
         res.send(data);
       })
