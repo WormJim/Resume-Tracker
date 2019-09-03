@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import moment from 'moment';
 import { initialize, JobSearchRow } from 'server/database';
+import apiRouter from 'server/routes/api';
 
 const server = express();
 
@@ -35,17 +36,26 @@ dotenv.config();
 
     const trackerResult = await tracker.collection('marc').insertOne(input);
 
-    // const result = await tracker
-    //   .collection('marc')
-    //   .find({})
-    //   .toArray();
-
     res.send(trackerResult);
   });
 
   server.use('/', (_, res) => {
     res.send('Hello');
   });
+
+  server.use(
+    '/api',
+    (req, res, next) => {
+      if (req) {
+        return next();
+      } else if (res) {
+        return next();
+      }
+
+      return next();
+    },
+    await apiRouter(db),
+  );
 
   server.use('*', (_, res) => {
     res.sendFile('../public');
