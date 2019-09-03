@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
 import initialize from 'server/database';
+import apiRouter from 'server/routes/api';
 
 const server = express();
 
@@ -16,18 +17,19 @@ dotenv.config();
   server.use(express.urlencoded({ extended: false }));
   server.use(express.json());
 
-  server.use('/data', async (_, res) => {
-    const result = await db
-      .collection('marc')
-      .find({})
-      .toArray();
+  server.use(
+    '/api',
+    (req, res, next) => {
+      if (req) {
+        return next();
+      } else if (res) {
+        return next();
+      }
 
-    res.send(result);
-  });
-
-  server.use('/', (_, res) => {
-    res.send('Hello');
-  });
+      return next();
+    },
+    await apiRouter(db),
+  );
 
   server.use('*', (_, res) => {
     res.sendFile('../public');
