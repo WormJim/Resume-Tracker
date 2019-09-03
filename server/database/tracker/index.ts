@@ -6,3 +6,9 @@ export const createTrackerRow = async (db: Db, user: string, data: JobSearchRow)
 
   return result;
 };
+
+export const deleteTrackerRow = async (db: Db, user: string, id: ObjectID) => {
+  const result = await db.collection(user).deleteOne(id);
+
+  return result;
+};
