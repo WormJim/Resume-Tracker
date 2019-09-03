@@ -82,6 +82,8 @@ const postingRouter = (db: Db) => {
         res.status(500).send(err);
       });
   });
+
+  return router;
 };
 
 export default postingRouter;
