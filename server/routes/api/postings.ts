@@ -1,7 +1,7 @@
 import express from 'express';
 import { Db, ObjectID } from 'mongodb';
 
-export const postingRouter = (db: Db) => {
+const postingRouter = (db: Db) => {
   const router = express.Router();
 
   router.post('/posting/create', (req, res) => {
@@ -83,3 +83,5 @@ export const postingRouter = (db: Db) => {
       });
   });
 };
+
+export default postingRouter;
