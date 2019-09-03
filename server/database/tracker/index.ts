@@ -12,3 +12,12 @@ export const deleteTrackerRow = async (db: Db, user: string, id: ObjectID) => {
 
   return result;
 };
+
+export const readTrackerRow = async (db: Db, user: string, id: ObjectID) => {
+  const result = await db
+    .collection(user)
+    .find()
+    .toArray();
+
+  return result;
+};
