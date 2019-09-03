@@ -21,3 +21,9 @@ export const readTrackerRow = async (db: Db, user: string, id: ObjectID) => {
 
   return result;
 };
+
+export const updateTrackerRow = async (db: Db, user: string, findData: {}, data: {}) => {
+  const result = await db.collection(user).findOneAndUpdate(findData, data);
+
+  return result;
+};
