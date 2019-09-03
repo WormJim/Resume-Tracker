@@ -1,3 +1,5 @@
+import { MongoClient, Db } from 'mongodb';
+
 export type accountStatus = 'Disabled' | 'Enabled' | 'Pending' | 'Unknown';
 
 export type motivation = 0 | 1 | 2 | 3;
@@ -35,3 +37,10 @@ export interface JobSearchRow {
   OnsiteInterview: InterviewStatus;
   Offer: JobOffer;
 }
+
+export interface MongoDatabaseObject {
+  connection: MongoClient;
+  tracker: Db;
+}
+
+export declare function initialize(): Promise<MongoDatabaseObject>;
