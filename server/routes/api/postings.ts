@@ -4,7 +4,7 @@ import { Db, ObjectID } from 'mongodb';
 const postingRouter = (db: Db) => {
   const router = express.Router();
 
-  router.post('/posting/create', (req, res) => {
+  router.post('/create', (req, res) => {
     const { user } = req.query;
 
     const test = db.collection(user);
@@ -19,7 +19,7 @@ const postingRouter = (db: Db) => {
       });
   });
 
-  router.get('/posting/companies', (req, res) => {
+  router.get('/companies', (req, res) => {
     const { user } = req.query;
 
     const collection = db.collection(user);
@@ -35,7 +35,7 @@ const postingRouter = (db: Db) => {
       });
   });
 
-  router.get('/posting/company', (req, res) => {
+  router.get('/company', (req, res) => {
     const { user } = req.query;
     const { _id } = req.body;
 
@@ -51,7 +51,7 @@ const postingRouter = (db: Db) => {
       });
   });
 
-  router.put('/posting/update', (req, res) => {
+  router.put('/update', (req, res) => {
     const { user } = req.query;
     const { _id } = req.body;
 
@@ -67,7 +67,7 @@ const postingRouter = (db: Db) => {
       });
   });
 
-  router.put('/posting/update/stage', (req, res) => {
+  router.put('/update/stage', (req, res) => {
     const { user } = req.query;
     const { _id } = req.body;
 
