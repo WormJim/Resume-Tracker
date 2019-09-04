@@ -8,8 +8,6 @@ const server = express();
 
 dotenv.config();
 
-// import apiRouter from 'server/routes/api';
-
 (async () => {
   const { tracker } = await initialize();
 
