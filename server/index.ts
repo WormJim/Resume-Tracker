@@ -1,8 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
-import moment from 'moment';
-import { initialize, JobSearchRow } from 'server/database';
+import { initialize } from 'server/database';
 import apiRouter from 'server/routes/api';
 
 const server = express();
