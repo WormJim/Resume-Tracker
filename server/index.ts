@@ -18,31 +18,6 @@ dotenv.config();
   server.use(express.urlencoded({ extended: false }));
   server.use(express.json());
 
-  server.use('/data', async (_, res) => {
-    const input: JobSearchRow = {
-      DateAdded: moment().toDate(),
-      Company: 'Fake',
-      Position: 'Fake Position',
-      Motivation: 1,
-      Connection: 'Engineer',
-      ConnectionName: 'Fake Person',
-      Messaged: 'false',
-      DateApplied: moment().toDate(),
-      Applied: 'false',
-      InitialInterview: 'Pending',
-      OnsiteInterview: 'Pending',
-      Offer: 'Pending',
-    };
-
-    const trackerResult = await tracker.collection('marc').insertOne(input);
-
-    res.send(trackerResult);
-  });
-
-  server.use('/', (_, res) => {
-    res.send('Hello');
-  });
-
   server.use(
     '/api',
     (req, res, next) => {
@@ -54,7 +29,7 @@ dotenv.config();
 
       return next();
     },
-    await apiRouter(db),
+    await apiRouter(tracker),
   );
 
   server.use('*', (_, res) => {
