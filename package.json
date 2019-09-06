@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start-dev-server": "cross-env nodemon"
+    "dev-server": "cross-env nodemon"
   },
   "eslintConfig": {
     "extends": "react-app"
