@@ -69,3 +69,17 @@ export type Address = PartialWithKeys<
   Addresses,
   'createdAt' | 'updatedAt' | 'deletedAt' | 'id' | 'userId'
 >;
+
+export interface PostingCollection extends Modified {
+  listingId: string;
+  position: string;
+  motivation: Motivation;
+  connection: Connection;
+  connectionName: string;
+  messaged: TrueOrFale;
+  dateApplied: Date;
+  applied: TrueOrFale;
+  initialInterview: InterviewStatus;
+  onsiteInterview: InterviewStatus;
+  offer: JobOffer;
+}
