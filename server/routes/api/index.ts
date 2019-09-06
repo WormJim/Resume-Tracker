@@ -2,6 +2,7 @@ import express from 'express';
 import { Db } from 'mongodb';
 import postingRouter from 'server/routes/api/postings';
 import moment from 'moment';
+import { ListingInsert } from 'server/database';
 
 export default async function apiRouter(db: Db) {
   const router = express.Router();
@@ -44,19 +45,16 @@ export default async function apiRouter(db: Db) {
       deletedAt: null,
     });
 
-    const listingResult = await db.collection('listings').insertOne({
-      source: 'glassdoor',
-      sourceUri:
-        'https://www.glassdoor.com/job-listing/front-end-developer-saggezza-JV_IC1132348_KO0,19_KE20,28.htm?jl=3274601332&ctt=1566427013687',
-      webUri: 'https://www.saggezza.com/',
-      position: 'Front End Developer',
+    const listingInsert: ListingInsert = {
       companyName: 'Saggezza',
-      salaryRange: '85,000 - 128,000',
-      salaryOffer: '101,909',
+      createdAt: moment().toDate(),
       headquarters: 'Chicago, IL',
+      id: 123,
       industry: 'IT Services',
+      listingId: 'cba123',
       location: 'New York, NY',
-      rating: '4.1',
+      position: 'Front End Developer',
+      rating: 4.1,
       responsibilities: `Develop new components and features for our frontend applications
       Write, audit, and improve our test coverage
       Document and refactor our frontend codebase
@@ -69,12 +67,19 @@ export default async function apiRouter(db: Db) {
       Understanding of progressive web applications
       Experience with test driven development
       Experience using Git`,
-      listingId: 'cba123',
-      userId: 'abc123',
-      createdAt: moment().toDate(),
+      salaryOffer: '101,909',
+      salaryRange: '85,000 - 128,000',
+      source: 'glassdoor',
+      sourceUri:
+        'https://www.glassdoor.com/job-listing/front-end-developer-saggezza-JV_IC1132348_KO0,19_KE20,28.htm?jl=3274601332&ctt=1566427013687',
       updatedAt: moment().toDate(),
-      deletedAt: null,
-    });
+      userId: 'abc123',
+      webUri: 'https://www.saggezza.com/',
+    };
+
+    const listingResult = await db.collection('listings').insertOne(listingInsert);
+
+    console.info(listingResult);
 
     const postingResult = await db.collection('postings').insertOne({
       userId: 'abc123',
