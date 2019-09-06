@@ -9,7 +9,7 @@ const server = express();
 dotenv.config();
 
 (async () => {
-  const { tracker } = await initialize();
+  const { rtDB } = await initialize();
 
   server.use(express.static(path.join(__dirname, '../public')));
   server.use(express.urlencoded({ extended: false }));
@@ -26,7 +26,7 @@ dotenv.config();
 
       return next();
     },
-    await apiRouter(tracker),
+    await apiRouter(rtDB),
   );
 
   server.use('*', (_, res) => {
