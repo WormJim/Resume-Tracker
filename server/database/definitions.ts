@@ -105,3 +105,13 @@ export interface ListingCollection extends Modified {
 
 export type ListingDocument = ListingCollection;
 export type ListingInsert = PartialWithKeys<ListingDocument, 'id' | 'createdAt' | 'updatedAt'>;
+
+export interface UserEmail extends Modified {
+  id: number;
+  email: string;
+  isPrimary: boolean;
+  userId: number;
+}
+
+export type UserEmailRow = UserEmail;
+export type UserEmailRowInsert = PartialWithKeys<UserEmailRow, 'id' | 'createdAt' | 'updatedAt'>;
