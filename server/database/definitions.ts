@@ -1,4 +1,4 @@
-import { MongoClient, Db } from 'mongodb';
+import { Db, MongoClient } from 'mongodb';
 
 export type accountStatus = 'Disabled' | 'Enabled' | 'Pending' | 'Unknown';
 
@@ -22,21 +22,6 @@ export type InterviewStatus = interviewStatus;
 
 export type jobOffer = 'Pending' | 'No Offer' | 'Offer' | 'Declined';
 export type JobOffer = jobOffer;
-
-export interface JobSearchRow {
-  DateAdded: Date;
-  Company: string;
-  Position: string;
-  Motivation: Motivation;
-  Connection: Connection;
-  ConnectionName: string;
-  Messaged: TrueOrFale;
-  DateApplied: Date;
-  Applied: TrueOrFale;
-  InitialInterview: InterviewStatus;
-  OnsiteInterview: InterviewStatus;
-  Offer: JobOffer;
-}
 
 export interface MongoDatabaseObject {
   connection: MongoClient;
