@@ -30,13 +30,16 @@ export interface MongoDatabaseObject {
 
 export declare function initialize(): Promise<MongoDatabaseObject>;
 
-export interface Modified {
+export interface CommonDocumentProps {
+  id: number;
   createdAt: Date;
   updatedAt: Date;
   deletedAt?: Date;
 }
 
-export interface UsersCollection {
+export type CommonProps = CommonDocumentProps;
+
+export interface UsersCollection extends CommonDocumentProps {
   firstName: string;
   lastName: string;
   displayName: string;
@@ -53,8 +56,7 @@ export interface UsersCollection {
   joinedDate: Date;
 }
 
-export interface Addresses extends Modified {
-  id: number;
+export interface Addresses extends CommonDocumentProps {
   streetLine1: string;
   streetLine2: string;
   city: string;
@@ -70,7 +72,7 @@ export type Address = PartialWithKeys<
   'createdAt' | 'updatedAt' | 'deletedAt' | 'id' | 'userId'
 >;
 
-export interface PostingCollection extends Modified {
+export interface PostingsCollection extends CommonDocumentProps {
   listingId: string;
   position: string;
   motivation: Motivation;
@@ -84,10 +86,12 @@ export interface PostingCollection extends Modified {
   offer: JobOffer;
 }
 
-export interface ListingCollection extends Modified {
+export type PostingDocument = PostingsCollection;
+export type PostingInsert = PartialWithKeys<PostingDocument, 'id' | 'createdAt' | 'updatedAt'>;
+
+export interface ListingsCollection extends CommonDocumentProps {
   companyName: string;
   headquarters: string;
-  id: number;
   industry: string;
   listingId: string;
   location: string;
@@ -103,11 +107,10 @@ export interface ListingCollection extends Modified {
   webUri: string;
 }
 
-export type ListingDocument = ListingCollection;
+export type ListingDocument = ListingsCollection;
 export type ListingInsert = PartialWithKeys<ListingDocument, 'id' | 'createdAt' | 'updatedAt'>;
 
-export interface UserEmail extends Modified {
-  id: number;
+export interface UserEmail extends CommonDocumentProps {
   email: string;
   isPrimary: boolean;
   userId: number;
