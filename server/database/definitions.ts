@@ -29,3 +29,9 @@ export interface MongoDatabaseObject {
 }
 
 export declare function initialize(): Promise<MongoDatabaseObject>;
+
+export interface Modified {
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: Date;
+}
