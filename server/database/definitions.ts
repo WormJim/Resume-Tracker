@@ -35,3 +35,37 @@ export interface Modified {
   updatedAt: Date;
   deletedAt: Date;
 }
+
+export interface UsersCollection {
+  firstName: string;
+  lastName: string;
+  displayName: string;
+  address: Addresses[];
+  email: {
+    main: string;
+    others: string[];
+  };
+  phoneNumber: {
+    main: string;
+    others: string[];
+  };
+  userName: string;
+  joinedDate: Date;
+}
+
+export interface Addresses extends Modified {
+  id: number;
+  streetLine1: string;
+  streetLine2: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  isPrimary: boolean;
+  userId: string;
+}
+
+export type addresses = Addresses;
+export type Address = PartialWithKeys<
+  Addresses,
+  'createdAt' | 'updatedAt' | 'deletedAt' | 'id' | 'userId'
+>;
