@@ -33,7 +33,7 @@ export declare function initialize(): Promise<MongoDatabaseObject>;
 export interface Modified {
   createdAt: Date;
   updatedAt: Date;
-  deletedAt: Date;
+  deletedAt?: Date;
 }
 
 export interface UsersCollection {
@@ -83,3 +83,25 @@ export interface PostingCollection extends Modified {
   onsiteInterview: InterviewStatus;
   offer: JobOffer;
 }
+
+export interface ListingCollection extends Modified {
+  companyName: string;
+  headquarters: string;
+  id: number;
+  industry: string;
+  listingId: string;
+  location: string;
+  position: string;
+  rating: number;
+  responsibilities: string;
+  requirements: string;
+  salaryOffer: string;
+  salaryRange: string;
+  source: string;
+  sourceUri: string;
+  userId: string;
+  webUri: string;
+}
+
+export type ListingDocument = ListingCollection;
+export type ListingInsert = PartialWithKeys<ListingDocument, 'id' | 'createdAt' | 'updatedAt'>;
