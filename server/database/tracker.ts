@@ -1,6 +1,15 @@
 import { Db, ObjectID } from 'mongodb';
 import { JobSearchRow } from 'server/database';
 
+const collection = 'tracker';
+
+const findById = (db: Db) => {
+  db.collection('marc').aggregate([
+    { $project: { name: { $toUpper: '$name' }, _id: 0 } },
+    { $sort: { name } },
+  ]);
+};
+
 export const createTrackerRow = async (db: Db, user: string, data: JobSearchRow) => {
   const result = await db.collection(user).insertOne(data);
 
