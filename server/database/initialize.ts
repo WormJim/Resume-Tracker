@@ -10,15 +10,19 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
-const initialize = async (): Promise<{ connection: MongoClient; tracker: Db }> => {
+const initialize = async (): Promise<{ connection: MongoClient; rtDB: Db }> => {
   try {
     const connection = await client.connect();
 
     console.info('DB Started');
 
+    const rtDB = connection.db('RTDB');
+
+    // const extended = Object.assign(connection.db('tracker'), { marc: tracker.collection('marc') });
+
     return {
       connection,
-      tracker: connection.db('tracker'),
+      rtDB,
     };
   } catch (error) {
     console.error('DB Failed');

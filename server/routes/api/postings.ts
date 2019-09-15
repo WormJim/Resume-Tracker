@@ -6,6 +6,22 @@ import { Db, ObjectID } from 'mongodb';
 const postingRouter = (db: Db) => {
   const router = express.Router();
 
+  router.get('/byId', async (_, res) => {
+    // const findById = (db: Db) => {
+    const results = await db
+      .collection('marc')
+      .aggregate([
+        {
+          $project: { name: { $toUpper: '$name' }, _id: 0 },
+        },
+        { $sort: { name: 1 } },
+      ])
+      .toArray();
+
+    res.send(results);
+    // };
+  });
+
   router.post('/create', (req, res) => {
     const { user } = req.query;
 
