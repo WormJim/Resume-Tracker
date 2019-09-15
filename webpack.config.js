@@ -4,8 +4,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './src/pages/index.html',
-  title: 'Read Robin',
+  template: './src/Pages/index.html',
+  title: 'Resume Tracker',
   filename: 'index.html',
 });
 
