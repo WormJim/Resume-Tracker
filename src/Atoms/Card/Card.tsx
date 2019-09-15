@@ -29,12 +29,12 @@ export interface CardProps {
   variant?: 'small' | 'medium' | 'large' | 'leaderBoard';
 }
 
-const Card = ({ className, variant, ...props }: CardProps) => {
-  const classes = useStyles();
+const Card = ({ className, variant = 'medium', ...props }: CardProps) => {
+  const styles = useStyles();
 
   return (
     <div
-      className={classNames(classes.root, variant && classes[variant], className)}
+      className={classNames(styles.root, variant && styles[variant], className)}
       {...props}
     ></div>
   );
