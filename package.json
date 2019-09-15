@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev-server": "cross-env nodemon"
+    "dev-server": "cross-env nodemon",
+    "dev-frontend": "webpack-dev-server --env.NODE_ENV=local --color --progress",
+    "pro-frontend": "webpack --env.NODE_ENV=local --env.production"
   },
   "eslintConfig": {
     "extends": "react-app"
