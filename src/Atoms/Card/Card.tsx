@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core';
 import classNames from 'classnames';
+import React, { memo } from 'react';
 
 const useStyles = makeStyles({
   root: {
@@ -25,15 +25,16 @@ const useStyles = makeStyles({
 
 export interface CardProps {
   children: React.ReactNode;
+  className?: string;
   variant?: 'small' | 'medium' | 'large' | 'leaderBoard';
 }
 
-const Card = ({ variant, ...props }: CardProps) => {
+const Card = ({ className, variant, ...props }: CardProps) => {
   const classes = useStyles();
 
   return (
     <div
-      className={classNames(classes.root, classes.medium, variant && classes[variant])}
+      className={classNames(classes.root, variant && classes[variant], className)}
       {...props}
     ></div>
   );
