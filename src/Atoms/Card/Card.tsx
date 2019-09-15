@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: '#808080',
+    backgroundColor: '#FFFFFF',
     boxShadow: '0 32px 44px 0 rgba(131,146,167,0.20)',
     borderRadius: 6,
     width: '100%',
