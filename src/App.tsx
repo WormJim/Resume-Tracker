@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
+import TextInput from 'src/Atoms/TextInput/TextInput';
 
 const useStyles = makeStyles({
   root: {
@@ -16,8 +17,14 @@ const App = () => {
 
   return (
     <div className={styles.root}>
-      <h1>Hello</h1>
-      <h2>World</h2>
+      <form>
+        <TextInput
+          placeHolder="Source"
+          value="Hello World"
+          error={false}
+          onChange={(event) => event}
+        ></TextInput>
+      </form>
     </div>
   );
 };
