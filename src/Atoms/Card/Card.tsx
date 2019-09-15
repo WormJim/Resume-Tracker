@@ -15,7 +15,9 @@ const useStyles = makeStyles({
   medium: {
     height: 205,
   },
-  large: { height: 310 },
+  large: {
+    height: 310,
+  },
   leaderBoard: {
     height: '100%',
   },
@@ -23,12 +25,18 @@ const useStyles = makeStyles({
 
 export interface CardProps {
   children: React.ReactNode;
+  variant?: 'small' | 'medium' | 'large' | 'leaderBoard';
 }
 
-const Card = ({ ...props }: CardProps) => {
+const Card = ({ variant, ...props }: CardProps) => {
   const classes = useStyles();
 
-  return <div className={classNames(classes.root, classes.medium)} {...props}></div>;
+  return (
+    <div
+      className={classNames(classes.root, classes.medium, variant && classes[variant])}
+      {...props}
+    ></div>
+  );
 };
 
 export default memo(Card);
