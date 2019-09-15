@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className={styles.root}>
       <form>
-        <Card>
+        <Card variant="medium">
           <TextInput
             placeHolder="Source"
             value="Hello World"
