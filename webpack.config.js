@@ -1,11 +1,17 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/pages/index.html',
   title: 'Read Robin',
   filename: 'index.html',
+});
+
+const terserPlugin = new TerserPlugin({
+  extractComments: true,
+  parallel: true,
 });
 
 module.exports = (env) => {
@@ -42,7 +48,12 @@ module.exports = (env) => {
     plugins: [htmlPlugin, new CleanWebpackPlugin()],
   };
 
-  const production = {};
+  const production = {
+    optimization: {
+      minimize: true,
+      minimizer: [terserPlugin],
+    },
+  };
 
   const development = {
     devtool: 'inline-source-map',
