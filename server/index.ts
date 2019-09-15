@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import { initialize } from 'server/database';
 import apiRouter from 'server/routes/api';
+import config from 'server/config/default';
 
 const server = express();
 
@@ -33,7 +34,7 @@ dotenv.config();
     res.sendFile('../public');
   });
 
-  server.listen(process.env.PORT, () => {
-    console.info(`Listening on Port ${process.env.PORT}`);
+  server.listen(config.PORT, () => {
+    console.info(`Listening on Port ${config.PORT}`);
   });
 })();
