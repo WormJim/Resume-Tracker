@@ -10,7 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 module.exports = (env) => {
   const common = {
-    mode: env.production === 'production' ? env.production : 'development',
+    mode: env.production ? 'production' : 'development',
     entry: {
       source: './src/index.tsx',
     },
@@ -60,6 +60,6 @@ module.exports = (env) => {
 
   return {
     ...common,
-    ...(env.production === 'production' ? production : development),
+    ...(env.production ? production : development),
   };
 };
