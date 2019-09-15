@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   large: {
     height: 310,
   },
-  leaderBoard: {
+  full: {
     height: '100%',
   },
 });
@@ -26,10 +26,10 @@ const useStyles = makeStyles({
 export interface CardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'small' | 'medium' | 'large' | 'leaderBoard';
+  variant?: 'small' | 'medium' | 'large' | 'full';
 }
 
-const Card = ({ className, variant = 'medium', ...props }: CardProps) => {
+const Card = ({ className, variant = 'full', ...props }: CardProps) => {
   const styles = useStyles();
 
   return (
