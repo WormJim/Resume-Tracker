@@ -24,9 +24,7 @@ const App = () => {
   return (
     <div className={styles.root}>
       {mockData.map((data, idx) => (
-        <div key={idx}>
-          <PostCard className={styles.postCard} source={data}></PostCard>
-        </div>
+        <PostCard className={styles.postCard} source={data} key={idx} />
       ))}
     </div>
   );
