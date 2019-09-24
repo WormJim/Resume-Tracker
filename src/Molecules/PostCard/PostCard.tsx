@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
 import { Card, Link } from 'src/Atoms';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   card: {
@@ -8,25 +9,51 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     margin: 5,
+    height: 'auto',
+  },
+  cardHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  hideOver: {
+    display: 'flex',
+    boxShadow: 'inset 0px -20px 10px rgba(0,0,0,0.2)',
+  },
+  status: {
+    displa: 'flex',
+    flexDirection: 'column',
   },
 });
 
 interface PostCardProps {
-  source: { details: string; companyName: string; position: string; reference: string };
+  source: {
+    details: string;
+    companyName: string;
+    position: string;
+    reference: string;
+    dateApplied: string;
+    status: string;
+  };
 }
 
 const PostCard = ({ source }: PostCardProps) => {
   const styles = useStyles();
 
   return (
-    <Card className={styles.card} variant="medium">
-      <div>
+    <Card className={styles.card} variant="small">
+      <div className={styles.cardHeader}>
         <Link href={source.reference} blank={true}>
-          {source.position}
+          <Typography>{source.position}</Typography>
         </Link>
+        <div>
+          <Typography>{source.dateApplied}</Typography>
+          <Typography>{source.status}</Typography>
+        </div>
       </div>
-      <div>{source.companyName}</div>
-      <div>{source.details}</div>
+      <Typography>{source.companyName}</Typography>
+      <div className={styles.hideOver}>
+        <Typography>{source.details}</Typography>
+      </div>
     </Card>
   );
 };
