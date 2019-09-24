@@ -5,8 +5,10 @@ import React, { memo } from 'react';
 const useStyles = makeStyles({
   root: {
     backgroundColor: '#FFFFFF',
-    boxShadow: '0 32px 44px 0 rgba(131,146,167,0.20)',
-    borderRadius: 6,
+    boxShadow: `0px 1px 3px 0px rgba(0,0,0,0.2), 
+                0px 1px 1px 0px rgba(0,0,0,0.14), 
+                0px 2px 1px -1px rgba(0,0,0,0.12)`,
+    borderRadius: 3,
     width: '100%',
     padding: '10px',
     overflow: 'hidden',
