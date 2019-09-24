@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     alignItems: 'center',
   },
   postCard: {
-    margin: 10,
     maxWidth: 345,
   },
 });
