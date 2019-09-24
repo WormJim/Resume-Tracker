@@ -1,28 +1,44 @@
+import {
+  Avatar,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Collapse,
+  IconButton,
+  Typography,
+} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
 import { makeStyles } from '@material-ui/styles';
+import classNames from 'classnames';
 import React, { memo } from 'react';
-import { Card, Link } from 'src/Atoms';
-import { Typography } from '@material-ui/core';
+import { useToggle } from 'src/Shared/Hooks';
 
 const useStyles = makeStyles({
   card: {
-    width: 400,
-    display: 'flex',
-    flexDirection: 'column',
-    margin: 5,
-    // height: 'auto',
+    maxWidth: 345,
   },
   cardHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
+    paddingBottom: 0,
   },
-  cardOverflow: {
+  cardCollapse: {
+    paddingTop: 0,
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transitionDuration: '300',
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  overflow: {
     boxShadow: '0 0',
     borderRadius: 0,
-    height: 'auto',
-  },
-  hideOver: {
     display: 'flex',
-    // boxShadow: 'inset 0px -20px 10px rgba(0,0,0,0.2)',
+    cursor: 'pointer',
   },
   status: {
     displa: 'flex',
@@ -32,9 +48,11 @@ const useStyles = makeStyles({
 
 interface PostCardProps {
   source: {
+    applied: boolean;
     details: string;
     companyName: string;
     position: string;
+    positionLocation: string;
     reference: string;
     dateApplied: string;
     status: string;
@@ -42,25 +60,48 @@ interface PostCardProps {
 }
 
 const PostCard = ({ source }: PostCardProps) => {
+  const [toggleDetails, setToggleDetails] = useToggle();
+
   const styles = useStyles();
 
   return (
-    <Card className={styles.card} variant="small">
-      <div className={styles.cardHeader}>
-        <Link href={source.reference} blank={true}>
-          <Typography>{source.position}</Typography>
-        </Link>
-        <div>
-          <Typography>{source.dateApplied}</Typography>
-          <Typography>{source.status}</Typography>
-        </div>
-      </div>
-      <Typography>{source.companyName}</Typography>
-      <div className={styles.hideOver}>
-        <Card className={styles.cardOverflow} variant="small">
-          <Typography>{source.details}</Typography>
-        </Card>
-      </div>
+    <Card className={styles.card}>
+      <CardHeader
+        avatar={<Avatar aria-label={source.status}>{source.status.charAt(0).toUpperCase()}</Avatar>}
+        title={source.position}
+        subheader={source.companyName}
+        className={styles.cardHeader}
+      ></CardHeader>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <IconButton
+          className={classNames(styles.expand, {
+            [styles.expandOpen]: toggleDetails,
+          })}
+          onClick={setToggleDetails}
+          aria-expanded={toggleDetails}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={toggleDetails} timeout="auto" unmountOnExit>
+        <CardContent className={styles.cardCollapse}>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >{`Location: ${source.positionLocation}`}</Typography>
+          <Typography variant="body2" color="textSecondary" component="p">{`Applied: ${
+            source.applied ? source.dateApplied : 'Not Yet'
+          }`}</Typography>
+        </CardContent>
+      </Collapse>
     </Card>
   );
 };
