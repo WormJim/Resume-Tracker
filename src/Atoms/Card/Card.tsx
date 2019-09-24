@@ -31,10 +31,11 @@ const useStyles = makeStyles({
 export interface CardProps {
   children: React.ReactNode;
   className?: string;
+  hiddenOverFlow?: boolean;
   variant?: 'small' | 'medium' | 'large' | 'full';
 }
 
-const Card = ({ className, variant = 'full', ...props }: CardProps) => {
+const Card = ({ className, variant = 'full', hiddenOverFlow, ...props }: CardProps) => {
   const styles = useStyles();
 
   return (
