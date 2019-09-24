@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
-import { TextInput } from 'src/Atoms';
-import { Card } from '@material-ui/core';
+import mockData from 'src/mockData';
+import PostCard from 'src/Organisms/PostCard/PostCard';
 
 const useStyles = makeStyles({
   root: {
@@ -24,17 +24,9 @@ const App = () => {
 
   return (
     <div className={styles.root}>
-      <form className={styles.form}>
-        <Card>
-          <TextInput
-            placeHolder="Source"
-            value="Hello World"
-            error={false}
-            onChange={(event) => event}
-          ></TextInput>
-          <TextInput error={false} onChange={(event) => event} />
-        </Card>
-      </form>
+      {mockData.map((data, idx) => (
+        <PostCard source={data} key={idx}></PostCard>
+      ))}
     </div>
   );
 };
