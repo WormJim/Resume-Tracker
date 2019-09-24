@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 });
 
 interface PostCardProps {
-  source: { description: string; position: string; reference: string };
+  source: { details: string; position: string; reference: string };
 }
 
 const PostCard = ({ source }: PostCardProps) => {
@@ -24,7 +24,7 @@ const PostCard = ({ source }: PostCardProps) => {
           {source.position}
         </Link>
       </h2>
-      <div>{source.description}</div>
+      <div>{source.details}</div>
     </Card>
   );
 };
