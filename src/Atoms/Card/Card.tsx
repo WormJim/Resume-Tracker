@@ -10,8 +10,8 @@ const useStyles = makeStyles({
                 0px 2px 1px -1px rgba(0,0,0,0.12)`,
     borderRadius: 3,
     width: '100%',
+    maxWidth: 375,
     overflow: 'hidden',
-    margin: 5,
   },
   small: {
     height: 100,
