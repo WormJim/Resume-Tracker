@@ -7,6 +7,7 @@ const useStyles = makeStyles({
     width: 400,
     display: 'flex',
     flexDirection: 'column',
+    margin: 5,
   },
 });
 
@@ -19,12 +20,12 @@ const PostCard = ({ source }: PostCardProps) => {
 
   return (
     <Card className={styles.card} variant="medium">
-      <h2>
+      <div>
         <Link href={source.reference} blank={true}>
           {source.position}
         </Link>
-      </h2>
-      <h3>{source.companyName}</h3>
+      </div>
+      <div>{source.companyName}</div>
       <div>{source.details}</div>
     </Card>
   );
