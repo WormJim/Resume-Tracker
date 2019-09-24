@@ -47,6 +47,7 @@ const useStyles = makeStyles({
 });
 
 interface PostCardProps {
+  className: string;
   source: {
     applied: boolean;
     details: string;
@@ -59,7 +60,7 @@ interface PostCardProps {
   };
 }
 
-const PostCard = ({ source }: PostCardProps) => {
+const PostCard = ({ className, source }: PostCardProps) => {
   const [toggleDetails, setToggleDetails] = useToggle();
 
   const styles = useStyles();
