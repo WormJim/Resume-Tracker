@@ -11,12 +11,6 @@ const useStyles = makeStyles({
     minHeight: '100%',
     width: '100%',
   },
-  form: {
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignSelf: 'center',
-  },
 });
 
 const App = () => {
