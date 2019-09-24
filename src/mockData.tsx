@@ -1,6 +1,6 @@
 const mockData = [
   {
-    company: 'GrubHub',
+    companyName: 'GrubHub',
     position: 'Front End Engineer 1',
     dateAdded: '09/20/2019',
     applied: true,
@@ -45,7 +45,7 @@ const mockData = [
       Grubhub is an equal opportunity employer. We evaluate qualified applicants without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, veteran status, and other legally protected characteristics. The EEO is the Law poster is available here: DOL Poster. If you are applying for a job in the U.S. and need a reasonable accommodation for any part of the employment process, please send an e-mail to talentacquisition@grubhub.com and let us know the nature of your request and contact information. Please note that only those inquiries concerning a request for reasonable accommodation will be responded to from this e-mail address.`,
   },
   {
-    company: 'CBOE',
+    companyName: 'CBOE',
     position: 'Software Engineer',
     dateAdded: '09/20/2019',
     applied: true,
@@ -91,7 +91,7 @@ const mockData = [
     Self-directed, self-motivated.`,
   },
   {
-    company: 'The Wing',
+    companyName: 'The Wing',
     position: 'JavaScript Engineer (Backend)',
     dateAdded: '09/20/2019',
     applied: true,
