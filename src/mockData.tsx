@@ -130,3 +130,5 @@ const mockData = [
     Curious, collaborative, and empathetic`,
   },
 ];
+
+export default mockData;
