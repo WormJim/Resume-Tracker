@@ -17,9 +17,6 @@ import React, { memo } from 'react';
 import { useToggle } from 'src/Shared/Hooks';
 
 const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-  },
   cardHeader: {
     paddingBottom: 0,
   },
@@ -66,7 +63,7 @@ const PostCard = ({ className, source }: PostCardProps) => {
   const styles = useStyles();
 
   return (
-    <Card className={styles.card}>
+    <Card className={className}>
       <CardHeader
         avatar={<Avatar aria-label={source.status}>{source.status.charAt(0).toUpperCase()}</Avatar>}
         title={source.position}
