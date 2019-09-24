@@ -10,6 +10,8 @@ const useStyles = makeStyles({
     height: 'auto !important',
     minHeight: '100%',
     width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
