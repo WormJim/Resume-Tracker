@@ -12,6 +12,7 @@ const useStyles = makeStyles({
     width: '100%',
     padding: '10px',
     overflow: 'hidden',
+    margin: 5,
   },
   small: {
     height: 100,
