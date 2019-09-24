@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
-import { Card } from 'src/Atoms';
+import { Card, Link } from 'src/Atoms';
 
 const useStyles = makeStyles({
   card: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles({
 });
 
 interface PostCardProps {
-  source: { position: string };
+  source: { position: string; reference: string };
 }
 
 const PostCard = ({ source }: PostCardProps) => {
@@ -19,7 +19,11 @@ const PostCard = ({ source }: PostCardProps) => {
 
   return (
     <Card className={styles.card} variant="medium">
-      <h2>{source.position}</h2>
+      <h2>
+        <Link href={source.reference} blank={true}>
+          {source.position}
+        </Link>
+      </h2>
     </Card>
   );
 };
