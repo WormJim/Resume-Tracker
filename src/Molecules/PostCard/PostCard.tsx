@@ -9,15 +9,20 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     margin: 5,
-    height: 'auto',
+    // height: 'auto',
   },
   cardHeader: {
     display: 'flex',
     justifyContent: 'space-between',
   },
+  cardOverflow: {
+    boxShadow: '0 0',
+    borderRadius: 0,
+    height: 'auto',
+  },
   hideOver: {
     display: 'flex',
-    boxShadow: 'inset 0px -20px 10px rgba(0,0,0,0.2)',
+    // boxShadow: 'inset 0px -20px 10px rgba(0,0,0,0.2)',
   },
   status: {
     displa: 'flex',
@@ -52,7 +57,9 @@ const PostCard = ({ source }: PostCardProps) => {
       </div>
       <Typography>{source.companyName}</Typography>
       <div className={styles.hideOver}>
-        <Typography>{source.details}</Typography>
+        <Card className={styles.cardOverflow} variant="small">
+          <Typography>{source.details}</Typography>
+        </Card>
       </div>
     </Card>
   );
