@@ -13,6 +13,10 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  postCard: {
+    margin: 10,
+    maxWidth: 345,
+  },
 });
 
 const App = () => {
@@ -21,7 +25,9 @@ const App = () => {
   return (
     <div className={styles.root}>
       {mockData.map((data, idx) => (
-        <PostCard source={data} key={idx}></PostCard>
+        <div key={idx}>
+          <PostCard className={styles.postCard} source={data}></PostCard>
+        </div>
       ))}
     </div>
   );
