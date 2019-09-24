@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
 import mockData from 'src/mockData';
-import PostCard from 'src/Organisms/PostCard/PostCard';
+import { PostCard } from 'src/Molecules';
 
 const useStyles = makeStyles({
   root: {
