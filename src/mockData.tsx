@@ -2,6 +2,7 @@ const mockData = [
   {
     companyName: 'GrubHub',
     position: 'Front End Engineer 1',
+    positionLocation: 'New York, NY',
     dateAdded: '09/20/2019',
     applied: true,
     dateApplied: '09/20/2019',
@@ -47,6 +48,7 @@ const mockData = [
   {
     companyName: 'CBOE',
     position: 'Software Engineer',
+    positionLocation: 'New York, NY',
     dateAdded: '09/20/2019',
     applied: true,
     dateApplied: '09/20/2019',
@@ -93,6 +95,7 @@ const mockData = [
   {
     companyName: 'The Wing',
     position: 'JavaScript Engineer (Backend)',
+    positionLocation: 'New York, NY',
     dateAdded: '09/20/2019',
     applied: true,
     dateApplied: '09/20/2019',
@@ -132,6 +135,7 @@ const mockData = [
   {
     companyName: 'The Wing',
     position: 'JavaScript Engineer (Frontend)',
+    positionLocation: 'New York, NY',
     dateAdded: '09/20/2019',
     applied: true,
     dateApplied: '09/20/2019',
