@@ -8,7 +8,8 @@ const useStyles = makeStyles({
     boxShadow: '0 32px 44px 0 rgba(131,146,167,0.20)',
     borderRadius: 6,
     width: '100%',
-    padding: '5px',
+    padding: '10px',
+    overflow: 'hidden',
   },
   small: {
     height: 100,
