@@ -1,16 +1,22 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './src/pages/index.html',
-  title: 'Read Robin',
+  template: './src/Pages/index.html',
+  title: 'Resume Tracker',
   filename: 'index.html',
+});
+
+const terserPlugin = new TerserPlugin({
+  extractComments: true,
+  parallel: true,
 });
 
 module.exports = (env) => {
   const common = {
-    mode: env.production === 'production' ? env.production : 'development',
+    mode: env.production ? 'production' : 'development',
     entry: {
       source: './src/index.tsx',
     },
@@ -42,7 +48,12 @@ module.exports = (env) => {
     plugins: [htmlPlugin, new CleanWebpackPlugin()],
   };
 
-  const production = {};
+  const production = {
+    optimization: {
+      minimize: true,
+      minimizer: [terserPlugin],
+    },
+  };
 
   const development = {
     devtool: 'inline-source-map',
@@ -60,6 +71,6 @@ module.exports = (env) => {
 
   return {
     ...common,
-    ...(env.production === 'production' ? production : development),
+    ...(env.production ? production : development),
   };
 };
