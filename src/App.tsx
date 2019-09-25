@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
-import mockData from 'src/mockData';
-import { PostCard } from 'src/Molecules';
+import { Postings } from 'src/Organisms';
 
 const useStyles = makeStyles({
   root: {
@@ -12,16 +11,6 @@ const useStyles = makeStyles({
     width: '100%',
     justifyContent: 'center',
   },
-  postCard: {
-    maxWidth: 345,
-    width: '100%',
-  },
-  postCardContainer: {
-    display: 'flex',
-    padding: '8px 10px',
-    justifyContent: 'center',
-    backgroundColor: '#f5f5f5',
-  },
 });
 
 const App = () => {
@@ -29,11 +18,7 @@ const App = () => {
 
   return (
     <div className={styles.root}>
-      {mockData.map((data, idx) => (
-        <div className={styles.postCardContainer} key={idx}>
-          <PostCard className={styles.postCard} source={data} />
-        </div>
-      ))}
+      <Postings />
     </div>
   );
 };
