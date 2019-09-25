@@ -24,7 +24,15 @@ interface PostingsInterface {
 const Postings = ({ className }: PostingsInterface) => {
   const styles = useStyles();
 
-  return <></>;
+  return (
+    <>
+      {mockData.map((data, idx) => (
+        <div className={styles.root} key={idx}>
+          <PostCard className={styles.postCard} source={data} />
+        </div>
+      ))}
+    </>
+  );
 };
 
 export default memo(Postings);
