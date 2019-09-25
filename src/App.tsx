@@ -20,8 +20,6 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     backgroundColor: '#f5f5f5',
-    // padding: 12,
-    // margin: 8,
   },
 });
 
