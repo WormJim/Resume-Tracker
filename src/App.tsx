@@ -16,6 +16,13 @@ const useStyles = makeStyles({
   postCard: {
     maxWidth: 345,
   },
+  postCardContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: '#f5f5f5',
+    // padding: 12,
+    // margin: 8,
+  },
 });
 
 const App = () => {
@@ -24,7 +31,9 @@ const App = () => {
   return (
     <div className={styles.root}>
       {mockData.map((data, idx) => (
-        <PostCard className={styles.postCard} source={data} key={idx} />
+        <div className={styles.postCardContainer} key={idx}>
+          <PostCard className={styles.postCard} source={data} />
+        </div>
       ))}
     </div>
   );
