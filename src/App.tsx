@@ -11,13 +11,14 @@ const useStyles = makeStyles({
     minHeight: '100%',
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center',
   },
   postCard: {
     maxWidth: 345,
+    width: '100%',
   },
   postCardContainer: {
     display: 'flex',
+    padding: '8px 10px',
     justifyContent: 'center',
     backgroundColor: '#f5f5f5',
   },
