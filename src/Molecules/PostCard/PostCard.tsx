@@ -44,7 +44,7 @@ const useStyles = makeStyles({
 });
 
 interface PostCardProps {
-  className: string;
+  className?: string;
   source: {
     applied: boolean;
     details: string;
