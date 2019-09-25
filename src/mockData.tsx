@@ -177,6 +177,216 @@ const mockData = [
       Desire to roll up sleeves and get scrappy
       Curious, collaborative, and empathetic`,
   },
+  {
+    companyName: 'The Wing',
+    position: 'JavaScript Engineer (Frontend)',
+    positionLocation: 'New York, NY',
+    dateAdded: '09/20/2019',
+    applied: true,
+    dateApplied: '09/20/2019',
+    status: 'No Response',
+    motivation: 4,
+    connection: false,
+    connectionName: null,
+    messaged: null,
+    initial: 'No Response',
+    onSite: null,
+    offer: null,
+    reference: 'https://jobs.lever.co/the-wing/cefa4b63-1107-4af1-a8ca-5e7d7c5a5cbf',
+    details: `The Wing is scaling its product and engineering teams as part of our efforts to  provide our rapidly growing community of members with the ability to connect with each other anytime, anywhere.
+
+      The Wing is seeking a mission-driven JavaScript engineer to join our rapidly scaling team. In this role, you will work in a small, autonomous product team to discover, develop, and ship valuable, seamless, and delightful products for our users. Reporting directly to the Director of Engineering, you will play a critical role in establishing an engineering process that promotes shipping frequently and predictably, while uncovering risk. If you love a fast-paced environment and working for mission-driven organization, this opportunity could be for you.
+      Responsibilities include but are not limited to:
+      Collaborate with other engineers, product managers, and product designers to shape and deliver on the product roadmap
+      Assess business and product requirements and propose viable technical solutions
+      Write clean, maintainable code and build reusable components that can scale
+      Write both unit and integration tests
+      Participate in sprint and stand-up process
+      Take active role in estimation process
+      Participate in pair programming with other engineers and in peer code review process
+      Contribute to recruiting efforts, including interviewing and optimizing our hiring process
+      Qualifications:
+      3-5 years of relevant engineering work experience
+      Proven track record of building and shipping high-quality software
+      Expert knowledge of React and high level of comfort with the React ecosystem (i.e. Redux, CSS-in-JS, etc.)
+      Experience integrating with APIs and services
+      Experience with browser developer tools
+      Experience working in agile product teams
+      Excellent communicator; able to convey intricate systems and logic to both technical and non-technical partners
+      Key traits we're looking for:
+      Comfortable working in a high-growth, fast-paced and iterative environment
+      Energized by solving complex, ambiguous problems
+      Desire to roll up sleeves and get scrappy
+      Curious, collaborative, and empathetic`,
+  },
+  {
+    companyName: 'The Wing',
+    position: 'JavaScript Engineer (Frontend)',
+    positionLocation: 'New York, NY',
+    dateAdded: '09/20/2019',
+    applied: true,
+    dateApplied: '09/20/2019',
+    status: 'No Response',
+    motivation: 4,
+    connection: false,
+    connectionName: null,
+    messaged: null,
+    initial: 'No Response',
+    onSite: null,
+    offer: null,
+    reference: 'https://jobs.lever.co/the-wing/cefa4b63-1107-4af1-a8ca-5e7d7c5a5cbf',
+    details: `The Wing is scaling its product and engineering teams as part of our efforts to  provide our rapidly growing community of members with the ability to connect with each other anytime, anywhere.
+
+      The Wing is seeking a mission-driven JavaScript engineer to join our rapidly scaling team. In this role, you will work in a small, autonomous product team to discover, develop, and ship valuable, seamless, and delightful products for our users. Reporting directly to the Director of Engineering, you will play a critical role in establishing an engineering process that promotes shipping frequently and predictably, while uncovering risk. If you love a fast-paced environment and working for mission-driven organization, this opportunity could be for you.
+      Responsibilities include but are not limited to:
+      Collaborate with other engineers, product managers, and product designers to shape and deliver on the product roadmap
+      Assess business and product requirements and propose viable technical solutions
+      Write clean, maintainable code and build reusable components that can scale
+      Write both unit and integration tests
+      Participate in sprint and stand-up process
+      Take active role in estimation process
+      Participate in pair programming with other engineers and in peer code review process
+      Contribute to recruiting efforts, including interviewing and optimizing our hiring process
+      Qualifications:
+      3-5 years of relevant engineering work experience
+      Proven track record of building and shipping high-quality software
+      Expert knowledge of React and high level of comfort with the React ecosystem (i.e. Redux, CSS-in-JS, etc.)
+      Experience integrating with APIs and services
+      Experience with browser developer tools
+      Experience working in agile product teams
+      Excellent communicator; able to convey intricate systems and logic to both technical and non-technical partners
+      Key traits we're looking for:
+      Comfortable working in a high-growth, fast-paced and iterative environment
+      Energized by solving complex, ambiguous problems
+      Desire to roll up sleeves and get scrappy
+      Curious, collaborative, and empathetic`,
+  },
+  {
+    companyName: 'The Wing',
+    position: 'JavaScript Engineer (Frontend)',
+    positionLocation: 'New York, NY',
+    dateAdded: '09/20/2019',
+    applied: true,
+    dateApplied: '09/20/2019',
+    status: 'No Response',
+    motivation: 4,
+    connection: false,
+    connectionName: null,
+    messaged: null,
+    initial: 'No Response',
+    onSite: null,
+    offer: null,
+    reference: 'https://jobs.lever.co/the-wing/cefa4b63-1107-4af1-a8ca-5e7d7c5a5cbf',
+    details: `The Wing is scaling its product and engineering teams as part of our efforts to  provide our rapidly growing community of members with the ability to connect with each other anytime, anywhere.
+
+      The Wing is seeking a mission-driven JavaScript engineer to join our rapidly scaling team. In this role, you will work in a small, autonomous product team to discover, develop, and ship valuable, seamless, and delightful products for our users. Reporting directly to the Director of Engineering, you will play a critical role in establishing an engineering process that promotes shipping frequently and predictably, while uncovering risk. If you love a fast-paced environment and working for mission-driven organization, this opportunity could be for you.
+      Responsibilities include but are not limited to:
+      Collaborate with other engineers, product managers, and product designers to shape and deliver on the product roadmap
+      Assess business and product requirements and propose viable technical solutions
+      Write clean, maintainable code and build reusable components that can scale
+      Write both unit and integration tests
+      Participate in sprint and stand-up process
+      Take active role in estimation process
+      Participate in pair programming with other engineers and in peer code review process
+      Contribute to recruiting efforts, including interviewing and optimizing our hiring process
+      Qualifications:
+      3-5 years of relevant engineering work experience
+      Proven track record of building and shipping high-quality software
+      Expert knowledge of React and high level of comfort with the React ecosystem (i.e. Redux, CSS-in-JS, etc.)
+      Experience integrating with APIs and services
+      Experience with browser developer tools
+      Experience working in agile product teams
+      Excellent communicator; able to convey intricate systems and logic to both technical and non-technical partners
+      Key traits we're looking for:
+      Comfortable working in a high-growth, fast-paced and iterative environment
+      Energized by solving complex, ambiguous problems
+      Desire to roll up sleeves and get scrappy
+      Curious, collaborative, and empathetic`,
+  },
+  {
+    companyName: 'The Wing',
+    position: 'JavaScript Engineer (Frontend)',
+    positionLocation: 'New York, NY',
+    dateAdded: '09/20/2019',
+    applied: true,
+    dateApplied: '09/20/2019',
+    status: 'No Response',
+    motivation: 4,
+    connection: false,
+    connectionName: null,
+    messaged: null,
+    initial: 'No Response',
+    onSite: null,
+    offer: null,
+    reference: 'https://jobs.lever.co/the-wing/cefa4b63-1107-4af1-a8ca-5e7d7c5a5cbf',
+    details: `The Wing is scaling its product and engineering teams as part of our efforts to  provide our rapidly growing community of members with the ability to connect with each other anytime, anywhere.
+
+      The Wing is seeking a mission-driven JavaScript engineer to join our rapidly scaling team. In this role, you will work in a small, autonomous product team to discover, develop, and ship valuable, seamless, and delightful products for our users. Reporting directly to the Director of Engineering, you will play a critical role in establishing an engineering process that promotes shipping frequently and predictably, while uncovering risk. If you love a fast-paced environment and working for mission-driven organization, this opportunity could be for you.
+      Responsibilities include but are not limited to:
+      Collaborate with other engineers, product managers, and product designers to shape and deliver on the product roadmap
+      Assess business and product requirements and propose viable technical solutions
+      Write clean, maintainable code and build reusable components that can scale
+      Write both unit and integration tests
+      Participate in sprint and stand-up process
+      Take active role in estimation process
+      Participate in pair programming with other engineers and in peer code review process
+      Contribute to recruiting efforts, including interviewing and optimizing our hiring process
+      Qualifications:
+      3-5 years of relevant engineering work experience
+      Proven track record of building and shipping high-quality software
+      Expert knowledge of React and high level of comfort with the React ecosystem (i.e. Redux, CSS-in-JS, etc.)
+      Experience integrating with APIs and services
+      Experience with browser developer tools
+      Experience working in agile product teams
+      Excellent communicator; able to convey intricate systems and logic to both technical and non-technical partners
+      Key traits we're looking for:
+      Comfortable working in a high-growth, fast-paced and iterative environment
+      Energized by solving complex, ambiguous problems
+      Desire to roll up sleeves and get scrappy
+      Curious, collaborative, and empathetic`,
+  },
+  {
+    companyName: 'The Wing',
+    position: 'JavaScript Engineer (Frontend)',
+    positionLocation: 'New York, NY',
+    dateAdded: '09/20/2019',
+    applied: true,
+    dateApplied: '09/20/2019',
+    status: 'No Response',
+    motivation: 4,
+    connection: false,
+    connectionName: null,
+    messaged: null,
+    initial: 'No Response',
+    onSite: null,
+    offer: null,
+    reference: 'https://jobs.lever.co/the-wing/cefa4b63-1107-4af1-a8ca-5e7d7c5a5cbf',
+    details: `The Wing is scaling its product and engineering teams as part of our efforts to  provide our rapidly growing community of members with the ability to connect with each other anytime, anywhere.
+
+      The Wing is seeking a mission-driven JavaScript engineer to join our rapidly scaling team. In this role, you will work in a small, autonomous product team to discover, develop, and ship valuable, seamless, and delightful products for our users. Reporting directly to the Director of Engineering, you will play a critical role in establishing an engineering process that promotes shipping frequently and predictably, while uncovering risk. If you love a fast-paced environment and working for mission-driven organization, this opportunity could be for you.
+      Responsibilities include but are not limited to:
+      Collaborate with other engineers, product managers, and product designers to shape and deliver on the product roadmap
+      Assess business and product requirements and propose viable technical solutions
+      Write clean, maintainable code and build reusable components that can scale
+      Write both unit and integration tests
+      Participate in sprint and stand-up process
+      Take active role in estimation process
+      Participate in pair programming with other engineers and in peer code review process
+      Contribute to recruiting efforts, including interviewing and optimizing our hiring process
+      Qualifications:
+      3-5 years of relevant engineering work experience
+      Proven track record of building and shipping high-quality software
+      Expert knowledge of React and high level of comfort with the React ecosystem (i.e. Redux, CSS-in-JS, etc.)
+      Experience integrating with APIs and services
+      Experience with browser developer tools
+      Experience working in agile product teams
+      Excellent communicator; able to convey intricate systems and logic to both technical and non-technical partners
+      Key traits we're looking for:
+      Comfortable working in a high-growth, fast-paced and iterative environment
+      Energized by solving complex, ambiguous problems
+      Desire to roll up sleeves and get scrappy
+      Curious, collaborative, and empathetic`,
+  },
 ];
 
 export default mockData;
