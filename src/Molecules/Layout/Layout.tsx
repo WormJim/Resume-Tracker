@@ -11,7 +11,7 @@ interface SiteLayoutProps {
   className?: string;
 }
 
-const SiteLayout = ({ className, children }: SiteLayoutProps) => {
+const SiteLayout = ({ children, className }: SiteLayoutProps) => {
   const styles = useStyles();
 
   return (
