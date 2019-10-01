@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-const mockData = [
+export const mockData = [
   {
     companyName: 'GrubHub',
     position: 'Front End Engineer 1',
@@ -9,9 +9,20 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 2',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -56,9 +67,20 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 2',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'In Process',
     onSite: null,
     offer: null,
@@ -104,9 +126,26 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 2',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 2',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'Rejected',
     onSite: null,
     offer: null,
@@ -145,9 +184,7 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -187,9 +224,14 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -229,9 +271,20 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 2',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -271,9 +324,7 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -313,9 +364,14 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -355,9 +411,32 @@ const mockData = [
     dateApplied: '09/20/2019',
     status: 'No Response',
     motivation: 4,
-    connection: false,
-    connectionName: null,
-    messaged: null,
+    connection: [
+      {
+        source: 'LinkedIn',
+        name: 'Some Name',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 2',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 3',
+        message: true,
+        new: true,
+      },
+      {
+        source: 'LinkedIn',
+        name: 'Some Name 4',
+        message: true,
+        new: true,
+      },
+    ],
     initial: 'No Response',
     onSite: null,
     offer: null,
@@ -390,4 +469,17 @@ const mockData = [
   },
 ];
 
-export default mockData;
+export const connections = [
+  { source: 'LinkedIn', name: 'Some Name', type: 'Grad' },
+  { source: 'LinkedIn', name: 'Some Name2', type: 'Engineer' },
+  { source: 'LinkedIn', name: 'Some Name2', type: 'Recruiter' },
+  { source: 'LinkedIn', name: 'Some Name2', type: 'Existing Connection' },
+];
+
+export const users = [
+  {
+    name: 'Grahn Cooledge',
+    firstName: 'Grahn',
+    lastName: 'Cooledge',
+  },
+];
