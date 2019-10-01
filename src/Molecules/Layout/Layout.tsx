@@ -3,7 +3,27 @@ import classNames from 'classnames';
 import React, { memo, ReactNode } from 'react';
 
 const useStyles = makeStyles({
-  root: {},
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  navContainer: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    zIndex: 100,
+  },
+  extendedNav: {
+    height: 52,
+    padding: '0 30px',
+    borderTop: 'none',
+    boxShadow: 'none',
+    background: '#283e4a',
+  },
+  children: {
+    marginTop: 52,
+  },
 });
 
 interface SiteLayoutProps {
@@ -16,7 +36,10 @@ const SiteLayout = ({ children, className }: SiteLayoutProps) => {
 
   return (
     <>
-      <div className={classNames(styles.root, className)}>{children}</div>
+      <div className={classNames(styles.root, className)}>
+        <header className={classNames(styles.navContainer, styles.extendedNav)}></header>
+        <div className={styles.children}>{children}</div>
+      </div>
     </>
   );
 };
