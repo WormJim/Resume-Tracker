@@ -36,10 +36,10 @@ const SiteLayout = ({ children, className }: SiteLayoutProps) => {
 
   return (
     <>
-      <div className={classNames(styles.root, className)}>
-        <header className={classNames(styles.navContainer, styles.extendedNav)}></header>
-        <div className={styles.children}>{children}</div>
-      </div>
+      {/* <div className={classNames(styles.root, className)}> */}
+      <header className={classNames(styles.navContainer, styles.extendedNav)}></header>
+      <div className={styles.children}>{children}</div>
+      {/* </div> */}
     </>
   );
 };
