@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import classNames from 'classnames';
 import React, { memo } from 'react';
-import mockData from 'src/mockData';
+import { mockData } from 'src/mockData';
 import { PostCard } from 'src/Molecules';
 
 const useStyles = makeStyles({
@@ -27,7 +27,7 @@ const Postings = ({ className }: PostingsInterface) => {
   return (
     <>
       {mockData.map((data, idx) => (
-        <div className={styles.root} key={idx}>
+        <div className={classNames(styles.root, className)} key={idx}>
           <PostCard className={styles.postCard} source={data} />
         </div>
       ))}

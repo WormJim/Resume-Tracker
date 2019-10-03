@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
 import { Postings } from 'src/Organisms';
+import { SiteLayout } from 'src/Molecules';
 
 const useStyles = makeStyles({
   root: {
@@ -18,7 +19,9 @@ const App = () => {
 
   return (
     <div className={styles.root}>
-      <Postings />
+      <SiteLayout>
+        <Postings />
+      </SiteLayout>
     </div>
   );
 };
