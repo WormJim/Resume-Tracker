@@ -1,7 +1,8 @@
 import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
-import { Postings } from 'src/Organisms';
-import { SiteLayout } from 'src/Molecules';
+// import { SiteLayout } from 'src/Molecules';
+// import { Postings } from 'src/Organisms';
+import { Sidebar } from 'src/Molecules';
 
 const useStyles = makeStyles({
   root: {
@@ -19,9 +20,11 @@ const App = () => {
 
   return (
     <div className={styles.root}>
-      <SiteLayout>
+      {/* <SiteLayout>
         <Postings />
-      </SiteLayout>
+      </SiteLayout> */}
+      {/* <Postings /> */}
+      <Sidebar>{'Working'}</Sidebar>
     </div>
   );
 };
