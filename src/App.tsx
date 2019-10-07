@@ -24,7 +24,17 @@ const App = () => {
         <Postings />
       </SiteLayout> */}
       {/* <Postings /> */}
-      <Sidebar>{'Working'}</Sidebar>
+      <Sidebar>
+        <div>Header Logo</div>
+        <div>
+          <div>Dashboard</div>
+          <div>Postings</div>
+          <div>Metrics</div>
+          <div>Metrics</div>
+          <div>Account</div>
+        </div>
+        <div>Footer Content</div>
+      </Sidebar>
     </div>
   );
 };
