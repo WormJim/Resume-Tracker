@@ -72,7 +72,7 @@ const DataTable = ({ children, className, data }: DataTableProps) => {
             <TableCell>Date Added</TableCell>
             <TableCell>Company</TableCell>
             <TableCell>Position</TableCell>
-            <TableCell>Applied</TableCell>
+            {/* <TableCell>Applied</TableCell> */}
             <TableCell>Date Applied</TableCell>
             <TableCell>Status</TableCell>
           </TableRow>
@@ -86,7 +86,8 @@ const DataTable = ({ children, className, data }: DataTableProps) => {
                 <TableCell className={styles.td}>
                   <Link href={row.reference}>{row.position}</Link>
                 </TableCell>
-                <TableCell className={styles.td}>{row.applied}</TableCell>
+                {/* <TableCell className={styles.td}>{'true'}</TableCell> */}
+                {/* <TableCell className={styles.td}>{row.applied}</TableCell> */}
                 <TableCell className={styles.td}>{row.dateApplied}</TableCell>
                 <TableCell className={styles.td}>{row.status}</TableCell>
               </TableRow>

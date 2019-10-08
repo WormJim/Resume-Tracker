@@ -1,10 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
-import React, { memo, ReactNode } from 'react';
-import { Routes } from 'src/Organisms';
-// import { SiteLayout } from 'src/Molecules';
-// import { Postings } from 'src/Organisms';
-import { SiteLayout, Sidebar, DataTable } from 'src/Molecules';
-import { mockData } from 'src/mockData';
+import React, { memo, ReactNode, useEffect } from 'react';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles({
   root: {
@@ -23,25 +19,24 @@ interface AppProps {
 
 const App = ({ children }: AppProps) => {
   const styles = useStyles();
+  const history = useHistory();
 
   // This is Temporary Auth for developmet purposes only.
   // Ideally auth will be checed through Redux and
   // Server Authentication
   const cookies = document.cookie;
 
-  const [foo, bar] = cookies
+  const [loginString] = cookies
     .split(';')
-    .filter((cookie) => cookie.trim().indexOf('foo=') === 0)[0]
-    .split('=');
+    .filter((cookie) => cookie.trim().indexOf('login=') === 0);
 
-  return (
-    <div className={styles.root}>
-      {children}
-      {/* <Routes />
-      <DataTable data={mockData}></DataTable>
-      <Sidebar>{'Working'}</Sidebar> */}
-    </div>
-  );
+  useEffect(() => {
+    if (!loginString) {
+      history.push('/');
+    }
+  }, [loginString, history]);
+
+  return <div className={styles.root}>{children}</div>;
 };
 
 export default memo(App);

@@ -1,6 +1,7 @@
 import React, { Suspense, useCallback, ReactNode, lazy } from 'react';
 import { HashRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import { App, Dashboard, Postings } from 'src/Organisms';
+import { SignIn } from 'src/Molecules';
 
 const useAppRender = (child: ReactNode) => useCallback(() => <Route>{(rotuerProps) => <App>{child}</App>}</Route>, [child]);
 
@@ -13,7 +14,7 @@ const useLazyAppRender = <T extends React.ComponentType<any>>(
 };
 
 const Routes = () => {
-  const renderDashBoard = useAppRender(<Dashboard />);
+  const renderSignIn = useAppRender(<SignIn />);
 
   const renderDashBoardLazy = useLazyAppRender(() => import('src/Organisms/Dashboard/Dashboard'));
   const renderListLazy = useLazyAppRender(() => import('src/Organisms/Postings/Postings'));
@@ -21,7 +22,9 @@ const Routes = () => {
   return (
     // Wrap In Layout
     <Router>
-      <nav>
+      <Switch>
+        <Route exact path="/" render={renderSignIn} />
+        {/* <nav>
         <ul>
           <li>
             <Link to="/list">List</Link>
@@ -30,17 +33,16 @@ const Routes = () => {
             <Link to="/portal/dashboard">Dashboard</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
-      <Suspense fallback={<Postings />}>
-        <Switch>
+        <Suspense fallback={<Postings />}>
           <Route exact path="/list" render={renderListLazy}>
             {/* <Postings /> */}
             {/* <SigninScreen></SigninScreen> */}
           </Route>
           <Route exact path="/portal/dashboard" render={renderDashBoardLazy} />
-        </Switch>
-      </Suspense>
+        </Suspense>
+      </Switch>
     </Router>
   );
 };
