@@ -34,14 +34,13 @@ export interface CardProps {
   variant?: 'small' | 'medium' | 'large' | 'full';
 }
 
-const Card = ({ className, variant = 'full', hiddenOverFlow, ...props }: CardProps) => {
+const Card = ({ children, className, variant = 'full', hiddenOverFlow, ...props }: CardProps) => {
   const styles = useStyles();
 
   return (
-    <div
-      className={classNames(styles.root, variant && styles[variant], className)}
-      {...props}
-    ></div>
+    <div className={classNames(styles.root, variant && styles[variant], className)} {...props}>
+      {children}
+    </div>
   );
 };
 
