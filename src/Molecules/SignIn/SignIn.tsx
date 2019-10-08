@@ -16,6 +16,9 @@ const SignIn = ({ children, className }: SignInProps) => {
   const styles = useStyles();
   const history = useHistory();
 
+  // This is Temporary Auth for developmet purposes only.
+  // Ideally auth will be checed through Redux and
+  // Server Authentication
   const loginClick = useCallback(() => {
     const age = 60 * 5;
 
