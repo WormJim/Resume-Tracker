@@ -8,6 +8,7 @@ const Routes = () => {
   const renderDashBoard = useAppRender(<Dashboard />);
 
   return (
+    // Wrap In Layout
     <Router>
       <nav>
         <ul>
