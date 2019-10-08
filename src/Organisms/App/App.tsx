@@ -26,6 +26,16 @@ const App = ({ children }: AppProps) => {
   // Server Authentication
   const cookies = document.cookie;
 
+  const [loginString] = cookies
+    .split(';')
+    .filter((cookie) => cookie.trim().indexOf('login=') === 0);
+
+  useEffect(() => {
+    if (!loginString) {
+      history.push('/');
+    }
+  }, [loginString, history]);
+
   return <div className={styles.root}>{children}</div>;
 };
 
