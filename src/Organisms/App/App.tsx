@@ -24,6 +24,16 @@ interface AppProps {
 const App = ({ children }: AppProps) => {
   const styles = useStyles();
 
+  // This is Temporary Auth for developmet purposes only.
+  // Ideally auth will be checed through Redux and
+  // Server Authentication
+  const cookies = document.cookie;
+
+  const [foo, bar] = cookies
+    .split(';')
+    .filter((cookie) => cookie.trim().indexOf('foo=') === 0)[0]
+    .split('=');
+
   return (
     <div className={styles.root}>
       {children}
