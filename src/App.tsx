@@ -2,7 +2,8 @@ import { makeStyles } from '@material-ui/styles';
 import React, { memo } from 'react';
 // import { SiteLayout } from 'src/Molecules';
 // import { Postings } from 'src/Organisms';
-import { Sidebar } from 'src/Molecules';
+import { Sidebar, DataTable } from 'src/Molecules';
+import { mockData } from 'src/mockData';
 
 const useStyles = makeStyles({
   root: {
@@ -24,7 +25,7 @@ const App = () => {
         <Postings />
       </SiteLayout> */}
       {/* <Postings /> */}
-      <Sidebar>
+      {/* <Sidebar>
         <div>Header Logo</div>
         <div>
           <div>Dashboard</div>
@@ -34,7 +35,8 @@ const App = () => {
           <div>Account</div>
         </div>
         <div>Footer Content</div>
-      </Sidebar>
+      </Sidebar> */}
+      <DataTable data={mockData}></DataTable>
     </div>
   );
 };
