@@ -16,8 +16,6 @@ const SignIn = ({ children, className }: SignInProps) => {
   const styles = useStyles();
   const history = useHistory();
 
-  const cookies: string = document.cookie;
-
   const loginClick = useCallback(() => {
     const age = 60 * 5;
 
