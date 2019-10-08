@@ -6,3 +6,6 @@ export * from 'src/Atoms/TextInput/TextInput';
 
 export { default as Link } from 'src/Atoms/Link/Link';
 export * from 'src/Atoms/Link/Link';
+
+export { default as Row } from 'src/Atoms/Row/Row';
+export * from 'src/Atoms/Row/Row';
