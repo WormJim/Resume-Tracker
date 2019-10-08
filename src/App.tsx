@@ -37,6 +37,8 @@ const App = () => {
         <div>Footer Content</div>
       </Sidebar> */}
       <DataTable data={mockData}></DataTable>
+      {/* <Postings /> */}
+      <Sidebar>{'Working'}</Sidebar>
     </div>
   );
 };
