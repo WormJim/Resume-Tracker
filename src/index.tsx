@@ -18,6 +18,8 @@ const Root = memo(() => {
   const styles = useStyles();
 
   return (
+    // Add Context and History
+
     // <div className={styles.root}>
     <Routes />
     // </div>
