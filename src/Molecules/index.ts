@@ -7,5 +7,5 @@ export * from 'src/Molecules/Layout/Layout';
 export { default as Sidebar } from 'src/Molecules/Sidebar/Sidebar';
 export * from 'src/Molecules/Sidebar/Sidebar';
 
-export { default as Table } from 'src/Molecules/Table/Table';
-export * from 'src/Molecules/Table/Table';
+export { default as DataTable } from 'src/Molecules/DataTable/DataTable';
+export * from 'src/Molecules/DataTable/DataTable';
