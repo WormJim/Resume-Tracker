@@ -22,6 +22,7 @@
     "@material-ui/styles": "^4.4.1",
     "@types/classnames": "^2.2.9",
     "@types/mongoose": "^5.5.17",
+    "@types/react-router-dom": "^5.1.0",
     "classnames": "^2.2.6",
     "config": "^3.2.2",
     "dotenv": "^8.1.0",
