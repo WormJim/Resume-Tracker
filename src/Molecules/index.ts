@@ -9,3 +9,6 @@ export * from 'src/Molecules/Sidebar/Sidebar';
 
 export { default as DataTable } from 'src/Molecules/DataTable/DataTable';
 export * from 'src/Molecules/DataTable/DataTable';
+
+export { default as SignIn } from 'src/Molecules/SignIn/SignIn';
+export * from 'src/Molecules/SignIn/SignIn';
